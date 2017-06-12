@@ -40,7 +40,6 @@
 
 namespace apache { namespace thrift { namespace transport {
 
-using namespace std;
 using boost::shared_ptr;
 
 TServerSocket::TServerSocket(int port) :
@@ -69,7 +68,7 @@ TServerSocket::TServerSocket(int port, int sendTimeout, int recvTimeout) :
   intSock1_(-1),
   intSock2_(-1) {}
 
-TServerSocket::TServerSocket(string path) :
+TServerSocket::TServerSocket(std::string path) :
   port_(0),
   path_(path),
   serverSocket_(-1),

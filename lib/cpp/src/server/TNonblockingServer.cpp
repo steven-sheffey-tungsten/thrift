@@ -846,7 +846,7 @@ void TNonblockingServer::registerEvents(event_base* base, bool ownEventBase) {
 void TNonblockingServer::setThreadManager(boost::shared_ptr<ThreadManager> threadManager) {
   threadManager_ = threadManager;
   if (threadManager != NULL) {
-    threadManager->setExpireCallback(std::tr1::bind(&TNonblockingServer::expireClose, this, std::tr1::placeholders::_1));
+    threadManager->setExpireCallback(std::bind(&TNonblockingServer::expireClose, this, std::placeholders::_1));
     threadPoolProcessing_ = true;
   } else {
     threadPoolProcessing_ = false;
