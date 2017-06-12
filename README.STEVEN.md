@@ -1,5 +1,7 @@
 # To Build on osx
 ```bash
+brew install openssl automake
+
 ./bootstrap.sh
 
 CXX="clang++ -std=c++11" LDFLAGS="-L/usr/local/opt/openssl/lib" \
